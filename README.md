@@ -4,7 +4,7 @@
 [![Astro](https://img.shields.io/badge/-Astro-FF5D01?logo=astro&logoColor=white)](https://astro.build)
 [![Tailwind CSS](https://img.shields.io/badge/-Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 
-Official **CodeXtreme** website - Informative web created by **Oscar**. Open source project built with Astro and Tailwind CSS for maximum efficiency and performance.
+Official **CodeXtreme** website - Informative web created by **Kiri86**. Open source project built with Astro and Tailwind CSS for maximum efficiency and performance.
 
 [![Desktop](https://i.imgur.com/ED5S5vR.png)](https://www.codextreme.me)
 
