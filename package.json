@@ -40,7 +40,8 @@
     "overrides": {
       "path-to-regexp": ">=6.3.0",
       "esbuild": ">=0.25.0",
-      "devalue": ">=5.6.2"
+      "devalue": ">=5.6.2",
+      "h3": ">=1.15.5"
     }
   }
 }
