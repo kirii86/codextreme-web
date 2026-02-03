@@ -1,0 +1,34 @@
+---
+interface Props {
+  slot: string;
+  format?: "auto" | "horizontal" | "vertical" | "rectangle";
+  fullWidth?: boolean;
+  className?: string;
+}
+
+const { slot, format = "auto", fullWidth = true, className = "" } = Astro.props;
+
+const adClient = "ca-pub-8173761999344527";
+---
+
+<div class:list={["ad-container", className]}>
+  <ins
+    class="adsbygoogle"
+    style="display:block"
+    data-ad-client={adClient}
+    data-ad-slot={slot}
+    data-ad-format={format}
+    data-full-width-responsive={fullWidth.toString()}></ins>
+  <script is:inline>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+
+<style>
+  .ad-container {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    margin: 1rem 0;
+  }
+</style>
