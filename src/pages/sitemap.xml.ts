@@ -8,7 +8,7 @@ const pages = [
   { path: '/herramientas', priority: '0.8' }
 ];
 
-const baseUrl = 'https://www.codextreme.me';
+const baseUrl = 'https://www.codextreme.es';
 
 export const GET: APIRoute = () => {
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -16,7 +16,7 @@ export const GET: APIRoute = () => {
 ${pages.map(page => {
   const englishUrl = `${baseUrl}${page.path}`;
   const spanishUrl = `${baseUrl}/es${page.path}`;
-  
+
   return `  <url>
     <loc>${englishUrl}</loc>
     <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>

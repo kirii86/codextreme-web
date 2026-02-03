@@ -16,24 +16,24 @@ if (canonical) {
   canonicalUrl = canonical;
 } else {
   let pathname = currentUrl.pathname;
-  
+
   // Si es español, quitar el prefijo /es para construir la versión base
   if (currentLang === "es" && pathname.startsWith("/es")) {
     pathname = pathname.substring(3) || "/";
   }
-  
+
   // Construir la URL canónica según el idioma actual
   if (currentLang === "en") {
-    canonicalUrl = `https://www.codextreme.me${pathname}`;
+    canonicalUrl = `https://www.codextreme.es${pathname}`;
   } else {
-    canonicalUrl = `https://www.codextreme.me/es${pathname}`;
+    canonicalUrl = `https://www.codextreme.es/es${pathname}`;
   }
 }
 
 // Funciones para generar URLs alternativas
 const getEnglishUrl = () => {
   if (currentLang === "es") {
-    return canonicalUrl.replace("/es", "") || "https://www.codextreme.me/";
+    return canonicalUrl.replace("/es", "") || "https://www.codextreme.es/";
   }
   return canonicalUrl;
 };
@@ -41,7 +41,7 @@ const getEnglishUrl = () => {
 const getSpanishUrl = () => {
   if (currentLang === "en") {
     const pathname = new URL(canonicalUrl).pathname;
-    return `https://www.codextreme.me/es${pathname}`;
+    return `https://www.codextreme.es/es${pathname}`;
   }
   return canonicalUrl;
 };

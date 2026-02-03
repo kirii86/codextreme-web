@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://www.codextreme.me/sitemap.xml
+Sitemap: https://www.codextreme.es/sitemap.xml
 
 # Disallow admin or private areas if any
 # Disallow: /admin/
