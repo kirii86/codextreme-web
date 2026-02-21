@@ -14,15 +14,31 @@ interface Props {
   ogImage?: string;
   canonical?: string;
   noindex?: boolean;
+  schema?: string;
 }
+
+const defaultSchema = JSON.stringify({
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  url: "https://www.codextreme.es",
+  name: "CodeXtremeOS",
+  description:
+    "La mejor ISO de Windows 10/11 optimizada con NTLite para gaming y máximo rendimiento.",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: "https://www.codextreme.es/buscar?q={search_term_string}",
+    "query-input": "required name=search_term_string",
+  },
+});
 
 const {
   title = "CodeXtremeOS: Windows Optimizado para Gaming | Mejora FPS y Rendimiento",
-  description = "Descarga CodeXtremeOS, la mejor versión de Windows optimizada para gaming y máximo rendimiento. Eleva tu experiencia de juego a otro nivel.",
-  keywords = "Windows optimizado, gaming, rendimiento, CodeXtremeOS, PC gaming, optimización Windows, windows gaming, mejorar FPS, sistema operativo gaming",
-  ogImage = "https://www.codextreme.es/imagen-previa.png",
+  description = "Descarga CodeXtremeOS, la mejor ISO de Windows 10/11 optimizada con NTLite para gaming y máximo rendimiento. Elimina bloatware, lower latency, mejora tus FPS, y disfruta de un consumo de recursos mínimo con seguridad garantizada.",
+  keywords = "Windows optimizado, gaming, rendimiento, CodeXtremeOS, PC gaming, optimización Windows, windows gaming, mejorar FPS, sistema operativo gaming, ISO NTLite, sin bloatware",
+  ogImage = "https://www.codextreme.es/image.png",
   canonical,
   noindex = false,
+  schema = defaultSchema,
 } = Astro.props;
 
 const currentLang = Astro.currentLocale || "en";
@@ -66,28 +82,8 @@ const currentLang = Astro.currentLocale || "en";
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#6B5B95" />
 
-    <!-- Google AdSense -->
-    <meta name="google-adsense-account" content="ca-pub-2211700982441901" />
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2211700982441901"
-      crossorigin="anonymous"></script>
-
     <!-- Schema Markup JSON-LD -->
-    <script type="application/ld+json">
-      {
-        "@context": "http://schema.org",
-        "@type": "WebSite",
-        "url": "https://www.codextreme.es",
-        "name": "CodeXtremeOS",
-        "description": "La mejor versión de Windows modificada para gaming y máximo rendimiento.",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://www.codextreme.es/buscar?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      }
-    </script>
+    <script type="application/ld+json" set:html={schema} />
   </head>
   <body
     class="bg-white dark:bg-[#141414] text-gray-900 dark:text-gray-100 min-h-screen relative"
